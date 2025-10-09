@@ -1,1 +1,9 @@
 # Archmage
+
+---
+
+Welcome to Archmage. You are a curious and ambitious wizard who starts from an early apprenticeship and grows into an Archmage through puzzling magic research and thrilling trials. Form your council of elders to save the world from calamity or chose to bring calamity upon the world yourself. Fate will be in your hands. 
+
+---
+Inquires can be directed to loganmreber@gmail.com
+
