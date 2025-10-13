@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://csmldc2g7vwui"]
+
+[ext_resource type="Script" uid="uid://cjhaoj235l06p" path="res://Scenes/will_spark.gd" id="1_h4t0c"]
+[ext_resource type="Script" uid="uid://bffgjua2c5q6j" path="res://Scenes/meditation_game.gd" id="1_m3unu"]
+[ext_resource type="Script" uid="uid://nyc3etxfajxk" path="res://Scenes/distraction_poly.gd" id="2_al4jh"]
+
+[sub_resource type="Gradient" id="Gradient_h4t0c"]
+offsets = PackedFloat32Array(0, 0.98550725)
+colors = PackedColorArray(1, 1, 1, 1, 0.17641911, 0.17641908, 0.17641908, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m3unu"]
+gradient = SubResource("Gradient_h4t0c")
+width = 1920
+height = 1080
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_m3unu")
+
+[node name="Background" type="Polygon2D" parent="."]
+visible = false
+texture = SubResource("GradientTexture2D_m3unu")
+polygon = PackedVector2Array(0, 0, 1920, 0, 1920, 1080, 0, 1080)
+
+[node name="FocusGeometry" type="Node2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+
+[node name="Quad0" type="Line2D" parent="FocusGeometry"]
+scale = Vector2(1.3, 1.3)
+points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+closed = true
+default_color = Color(3.657937e-06, 0.5912816, 0.59203136, 1)
+
+[node name="Quad22_5" type="Line2D" parent="FocusGeometry"]
+rotation = 0.39269912
+points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+closed = true
+width = 5.0
+default_color = Color(3.657937e-06, 0.5912816, 0.59203136, 1)
+
+[node name="Quad45" type="Line2D" parent="FocusGeometry"]
+rotation = 0.7853982
+scale = Vector2(1.2999998, 1.2999998)
+points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+closed = true
+default_color = Color(3.657937e-06, 0.5912816, 0.59203136, 1)
+
+[node name="Quad67_5" type="Line2D" parent="FocusGeometry"]
+rotation = 1.1780972
+scale = Vector2(0.99999994, 0.99999994)
+points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+closed = true
+width = 5.0
+default_color = Color(3.657937e-06, 0.5912816, 0.59203136, 1)
+
+[node name="InnerOcto" type="Line2D" parent="FocusGeometry"]
+rotation = 0.39269912
+points = PackedVector2Array(-64, -152.1, 64, -152.1, 152.1, -64, 152.1, 64, 64, 152.1, -64, 152.1, -152.1, 64, -152.1, -64)
+closed = true
+default_color = Color(3.657937e-06, 0.5912816, 0.59203136, 1)
+
+[node name="DistractionPoly" type="Polygon2D" parent="."]
+visible = false
+rotation = 2.3561945
+color = Color(1, 0.28235295, 0.21960784, 0.78039217)
+polygon = PackedVector2Array(86.5, 0, 0, 86.5, 0, 0)
+script = ExtResource("2_al4jh")
+
+[node name="WillPoly" type="Polygon2D" parent="."]
+position = Vector2(960, 540)
+rotation = 0.39269912
+scale = Vector2(0.25, 0.25)
+color = Color(0.46133924, 0.9999996, 0.9978878, 1)
+polygon = PackedVector2Array(-32, -76.05, 32, -76.05, 76.05, -32, 76.05, 32, 32, 76.05, -32, 76.05, -76.05, 32, -76.05, -32)
+script = ExtResource("1_h4t0c")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="WillPoly"]
+amount = 12
+lifetime = 0.5
+speed_scale = 0.5
+emission_shape = 1
+emission_sphere_radius = 64.0
+gravity = Vector2(0, -980)
+radial_accel_min = -100.0
+radial_accel_max = 100.0
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_max = 25.0
+color = Color(0.47843137, 1, 1, 1)
